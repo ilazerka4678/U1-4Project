@@ -1,6 +1,15 @@
-General description of the program: User chooses how far to cast his fishing rod,
-then the user will have to wait a random amount of time before they catch something,
-and are presented with their catch after they press the right button.
+General description of the program: User casts their fishing rod,
+then the user will have to press the right button to catch their fish
 The user will be able to choose different bait that will attract different fish.
 The program will keep track of the user's biggest fish caught and the rarest type of fish caught.
 The user can quit the program at any time.
+
+Constructors: one empty constructor that will set the biggest catch to zero & fishes caught to zero.
+
+methods: public char generateChar() - returns one of the following characters randomly: Z X C V
+public void setBait(String bait) - sets the variable baitPower to whatever value corresponds to the string that was used
+public String catchFish() - will return what fish the user has caught (type and weight), update the biggest fish variable if requirements met.
+the baitPower  variable will affect what fish is caught. method adds 1 to total fish caught.
+public String fishingInfo() - will return the biggest fish weight and total fish caught.
+
+instance variables: biggestFish, totalFish, baitPower
