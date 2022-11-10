@@ -1,0 +1,6 @@
+General description of the program: User chooses how far to cast his fishing rod,
+then the user will have to wait a random amount of time before they catch something,
+and are presented with their catch after they press the right button.
+The user will be able to choose different bait that will attract different fish.
+The program will keep track of the user's biggest fish caught and the rarest type of fish caught.
+The user can quit the program at any time.
