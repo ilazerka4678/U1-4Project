@@ -10,6 +10,6 @@ methods: public char generateChar() - returns one of the following characters ra
 public void setBait(String bait) - sets the variable baitPower to whatever value corresponds to the string that was used
 public String catchFish() - will return what fish the user has caught (type and weight), update the biggest fish variable if requirements met.
 the baitPower  variable will affect what fish is caught. method adds 1 to total fish caught.
-public String fishingInfo() - will return the biggest fish weight and total fish caught.
+public String toString() - will return the biggest fish weight and total fish caught.
 
 instance variables: biggestFish, totalFish, baitPower

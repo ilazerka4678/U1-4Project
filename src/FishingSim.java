@@ -30,6 +30,17 @@ public void setBait(String baitName){
         baitPower = 5;
     }
 }
+public String getBait(){
+    if (baitPower == 7){
+        return "Worm";
+    }
+    else if (baitPower == 1){
+        return "Cheese";
+    }
+    else{
+        return "Bread";
+    }
+}
 public String catchFish(){
     int randNum = (int)(Math.random()*baitPower)+1;
     int fishWeight = (int)(Math.random()*17) + 1;
