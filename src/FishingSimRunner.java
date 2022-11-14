@@ -18,6 +18,7 @@ while (!Input.equals("-1")){
     if (Input.equals("2")){
         System.out.print("Bait options: Cheese, bread, worm. Input your bait: ");
         test.setBait(s.nextLine());
+        System.out.println("You chose " + test.getBait() + "!");
 
     }
     if (Input.equals("3")){

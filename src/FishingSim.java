@@ -1,5 +1,8 @@
+import java.text.DecimalFormat;
+
 public class FishingSim {
-private int biggestFish;
+DecimalFormat df = new DecimalFormat("###.###");
+private double biggestFish;
 private int fishCaught;
 private int baitPower;
 public FishingSim(){
@@ -43,7 +46,7 @@ public String getBait(){
 }
 public String catchFish(){
     int randNum = (int)(Math.random()*baitPower)+1;
-    int fishWeight = (int)(Math.random()*17) + 1;
+    double fishWeight = (((Math.random()*17) + 1)/1000)*1000;
     String fishType;
     if (randNum == 1){
        fishType = "slurper";
@@ -64,9 +67,10 @@ public String catchFish(){
         biggestFish = fishWeight;
     }
     fishCaught++;
-    return "You caught a " + fishType + ". It weighs " + fishWeight + " pounds." ;
+    return "You caught a " + fishType + ". It weighs " + df.format(fishWeight) + " pounds." ;
 }
 public String toString(){
-    return "Biggest fish: " + biggestFish + " pounds. Total fish caught: " +  fishCaught;
+    return "Biggest fish: " + df.format(biggestFish) + " pounds. Total fish caught: " +  fishCaught;
+
 }
 }
