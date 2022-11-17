@@ -5,9 +5,14 @@ DecimalFormat df = new DecimalFormat("###.###");
 private double biggestFish;
 private int fishCaught;
 private int baitPower;
+
 public FishingSim(){
     biggestFish = 0;
     fishCaught = 0;
+    baitPower = 0;
+    }
+public FishingSim(int baitPower){
+    this.baitPower = baitPower;
     }
 public char generateChar(){
     int randomNum = (int)(Math.random()*3)+1;
@@ -29,7 +34,7 @@ public void setBait(String baitName){
     else if (baitName.equals("Cheese") || baitName.equals("cheese")){
         baitPower = 1;
     }
-    else if (baitName.equals("Bread") || baitName.equals("bread")){
+    else {
         baitPower = 5;
     }
 }
@@ -46,7 +51,7 @@ public String getBait(){
 }
 public String catchFish(){
     int randNum = (int)(Math.random()*baitPower)+1;
-    double fishWeight = (((Math.random()*17) + 1)/1000)*1000;
+    double fishWeight = (((Math.random()*17) + 1));
     String fishType;
     if (randNum == 1){
        fishType = "slurper";
