@@ -1,33 +1,39 @@
 import java.text.DecimalFormat;
 
+/**
+ * The FishingSim class is responsible for all the logic of the program and the methods, while the FishingSimRunner is responsible for user input and display.
+ *
+ */
 public class FishingSim {
 DecimalFormat df = new DecimalFormat("###.###");
 private double biggestFish;
 private int fishCaught;
 private int baitPower;
 
-public FishingSim(){
+    /**
+     * Constructor for FishingSim. Creates a new instance of FishingSim with no parameters, setting all variables to 0.
+     */
+    public FishingSim(){
     biggestFish = 0;
     fishCaught = 0;
     baitPower = 0;
     }
-public FishingSim(int baitPower){
+
+    /**
+     * Constructor for FishingSim. Creates a new instance of FishingSim, setting the baitPower to the specified parameter.
+     * @param baitPower
+     */
+    public FishingSim(int baitPower){
     this.baitPower = baitPower;
+    biggestFish = 0;
+    fishCaught = 0;
     }
-public char generateChar(){
-    int randomNum = (int)(Math.random()*3)+1;
-    if (randomNum == 1){
-        return 'W';
-    }
-    else if (randomNum == 2){
-        return 'A';
-    }
-    else if (randomNum == 3){
-        return 'S';
-    }
-    return 'D';
-}
-public void setBait(String baitName){
+
+    /**
+     * Sets baitPower to a number that corresponds with the baitName the user inputs.
+     * @param baitName used to represent the bait the user chose.
+     */
+    public void setBait(String baitName){
     if (baitName.equals("Worm") || baitName.equals("worm")){
         baitPower = 7;
     }
@@ -38,7 +44,12 @@ public void setBait(String baitName){
         baitPower = 5;
     }
 }
-public String getBait(){
+
+    /**
+     * a getter method to show the user what bait they have equipped.
+     * @return
+     */
+    public String getBait(){
     if (baitPower == 7){
         return "Worm";
     }
@@ -49,7 +60,12 @@ public String getBait(){
         return "Bread";
     }
 }
-public String catchFish(){
+
+    /**
+     * a method that is responsible for catching a random fish. The chances are influenced by baitPower
+     * @return returns the type of fish the user has caught.
+     */
+    public String catchFish(){
     int randNum = (int)(Math.random()*baitPower)+1;
     double fishWeight = (((Math.random()*17) + 1));
     String fishType;
@@ -74,7 +90,12 @@ public String catchFish(){
     fishCaught++;
     return "You caught a " + fishType + ". It weighs " + df.format(fishWeight) + " pounds." ;
 }
-public String toString(){
+
+    /**
+     * a toString method used to show the user statistics.
+     * @return returns a string with the user stats.
+     */
+    public String toString(){
     return "Biggest fish: " + df.format(biggestFish) + " pounds. Total fish caught: " +  fishCaught;
 
 }
